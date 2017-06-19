@@ -28,13 +28,11 @@ r-base-dev \
 r-recommended 
 
 # Install R packages
-RUN R -e "install.packages(c('tidyverse', 'bit64', 'doMC', 'RSQLite', 'glmnet', 'data.table'), repos='http://cran.us.r-project.org/', dependencies=TRUE); source('http://bioconductor.org/biocLite.R'); biocLite(c('qvalue'))" 
+RUN R -e "install.packages(c('dplyr', 'bit64', 'doMC', 'RSQLite', 'glmnet', 'data.table'), repos='http://cran.us.r-project.org/', dependencies=TRUE); source('http://bioconductor.org/biocLite.R'); biocLite(c('qvalue'))" 
 
 # Download PredictDB pipeline
-RUN wget https://s3.amazonaws.com/imlab-jiamaoz/shared/expression_prediction_model_pipeline.tar.gz \
-	&& tar -xzvf expression_prediction_model_pipeline.tar.gz \
-	&& rm -rf expression_prediction_model_pipeline.tar.gz 
+RUN git clone https://github.com/jiamaozheng/prediction_model_docker.git
 
 # Set the default directory where CMD will execute
-WORKDIR expression_prediction_model_pipeline/
+WORKDIR prediction_model_docker/
 

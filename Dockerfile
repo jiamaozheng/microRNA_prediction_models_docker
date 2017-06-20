@@ -36,5 +36,5 @@ RUN wget https://s3.amazonaws.com/imlab-jiamaoz/shared/expression_prediction_mod
 	&& rm -rf expression_prediction_model_pipeline.tar.gz 
 	
 # Set the default directory where CMD will execute
-WORKDIR prediction_model_docker/
+WORKDIR expression_prediction_model_pipeline/
 

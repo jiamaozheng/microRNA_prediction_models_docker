@@ -2,22 +2,22 @@
 
 
 ## Docker image
-The Docker image is available at [here](https://hub.docker.com/r/jiamaozheng/prediction_model_docker/), and can be downloaded by running the following command
+The Docker image can be downloaded by running the following command
 ```bash
-docker pull jiamaozheng/prediction_model_docker
+docker pull jiamaozheng/microrna_prediction_models_docker
 ```
 
 ## Docker File 
-Is available at [Here](https://github.com/jiamaozheng/prediction_model_docker/blob/master/Dockerfile)
+Is available at [here](https://github.com/jiamaozheng/prediction_model_docker/blob/master/Dockerfile)
 
 
 ## Pipeline 
-Is available at [Here](https://github.com/jiamaozheng/expression_prediction_model_pipeline)
+Is available at [here](https://github.com/jiamaozheng/microRNA_gene_expression_prediction_model_pipeline)
 
 ## Prerequisites
 Create an input directory by running a [script](https://github.com/jiamaozheng/prediction_model_docker/blob/master/input_directory.sh)
 
-Prepare the input files with the following format and place them in the appropriate input directory
+Prepare the input files with the following formats and place them in appropriate input directory
 + [expression file - miRNA_CTR_Exp.RDS](https://s3.amazonaws.com/imlab-jiamaoz/shared/gene_expression_sample.txt)
 + [expression annotation file - miRBase_miRNA_gene_annotation.RDS](https://s3.amazonaws.com/imlab-jiamaoz/shared/gene_annotation_sample.txt)
 + [genotype file - geuvadis_snps.txt ](https://s3.amazonaws.com/imlab-jiamaoz/shared/genotype_sample.txt)
@@ -26,7 +26,7 @@ Prepare the input files with the following format and place them in the appropri
 ## Running Docker Image 
 ```bash 
 # Run a Docker image as a Container and mounts the input directory in the Container 
-docker run -v /Volumes/im-lab/nas40t2/jiamao/Projects/microRNA/model_pipeline/model_pipeline/expression_prediction_model_pipeline:/expression_prediction_model_pipeline -it jiamaozheng/prediction_model_docker
+docker run -v /Volumes/im-lab/nas40t2/jiamao/Projects/microRNA/model_pipeline/model_pipeline/microRNA_gene_expression_prediction_model_pipeline:/microRNA_gene_expression_prediction_model_pipeline -it jiamaozheng/microrna_prediction_models_docker
 ```
 
 ## Running Pipeline Inside the Docker Container 

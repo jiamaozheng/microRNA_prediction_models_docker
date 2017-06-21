@@ -45,4 +45,4 @@ docker run -v /Volumes/im-lab/nas40t2/jiamao/Projects/microRNA/model_pipeline/mo
 
 --results_output_path ../output_mirna/
 ``` 
-[More command line examples]()
+[More command line examples](https://github.com/jiamaozheng/microRNA_gene_expression_prediction_model_pipeline)
